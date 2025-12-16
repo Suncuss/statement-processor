@@ -18,6 +18,7 @@ class TransactionCategorizer:
         "Shopping",
         "Healthcare",
         "Entertainment",
+        "Rent/Housing",
         "Payment/Credit",
         "Other"
     ]
@@ -71,13 +72,15 @@ Be specific:
 - Restaurants, cafes, food delivery = Food/Restaurant
 - Gas, parking, ChargePoint, Uber, Lyft, tolls = Transportation
 - Netflix, ChatGPT, GitHub, Adobe, etc. = Subscriptions
-- GEICO, Spectrum = Utilities
+- GEICO, Spectrum, internet, phone bills = Utilities
 - Medical, dental = Healthcare
 - Amazon, IKEA (furniture), general shopping = Shopping
+- BILT RENT, rent payments, apartment/housing payments = Rent/Housing
 - AUTOPAY, PAYMENT, AUTOMATIC PAYMENT (payments TO the card company) = Payment/Credit
 
 IMPORTANT:
 - Payment/Credit is ONLY for payments you make TO the credit card company (like AUTOPAY PAYMENT)
+- RENT PAYMENTS (like "BILT RENT", "BPS*BILT RENT") are Rent/Housing, NOT Payment/Credit
 - Card benefits/rewards (like "AMEX Dining Credit", "AMEX Dunkin' Credit") should be categorized by what they offset (e.g., dining credits = Food/Restaurant)
 - This way, category totals show your net spending after rewards
 
