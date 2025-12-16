@@ -11,36 +11,45 @@ Process and categorize credit card statements from multiple providers using Clau
 - **CLI Interface**: Command-line tool for batch processing
 - **Consolidated reporting**: Combines transactions from all cards with category and card breakdowns
 
-## Setup
-
-### Option 1: Docker (Recommended)
+## Quick Start
 
 ```bash
-# Set your API key
+# Clone the repo
+git clone https://github.com/Suncuss/statement-processor.git
+cd statement-processor
+
+# Set your Anthropic API key
 export ANTHROPIC_API_KEY=your_key_here
 
-# Run with docker-compose
+# Run with Docker
 docker-compose up --build
 ```
 
 Then open http://localhost:8501
 
+## Setup Options
+
+### Option 1: Docker (Recommended)
+
+```bash
+export ANTHROPIC_API_KEY=your_key_here
+docker-compose up --build
+```
+
 ### Option 2: Local Python
 
-1. Install dependencies:
 ```bash
+# Create virtual environment
 python3 -m venv venv
 source venv/bin/activate
+
+# Install dependencies
 pip install -r requirements.txt
-```
 
-2. Create `.env` with your API key:
-```
-ANTHROPIC_API_KEY=your_key_here
-```
+# Create .env file with your API key
+echo "ANTHROPIC_API_KEY=your_key_here" > .env
 
-3. Run the app:
-```bash
+# Run the app
 streamlit run app.py
 ```
 
@@ -77,6 +86,7 @@ The program will:
 - Shopping
 - Healthcare
 - Entertainment
+- Rent/Housing
 - Payment/Credit (automatically excluded from spending totals)
 - Other
 
@@ -110,7 +120,10 @@ statement_processor/
 
 ## Customization
 
-- **Categories**: Edit `categorizer.py:15` to add/modify categories
-- **Cache logic**: Modify `categorizer.py:42` for better merchant matching
+- **Categories**: Edit `categorizer.py` to add/modify categories
+- **Cache logic**: Modify `categorizer.py` for better merchant matching
 - **UI styling**: Customize `app.py` for different layouts or themes
-# statement-processor
+
+## License
+
+MIT
