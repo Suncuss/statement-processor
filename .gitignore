@@ -1,0 +1,9 @@
+.env
+__pycache__/
+data/
+*.pyc
+.DS_Store
+cache/
+venv/
+*.log
+*_old.py
